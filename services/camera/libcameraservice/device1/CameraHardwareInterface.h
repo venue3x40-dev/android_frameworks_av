@@ -122,7 +122,7 @@ public:
     {
         ALOGV("%s(%s) buf %p", __FUNCTION__, mName.string(), buf.get());
 
-        if (mDevice->ops->set_preview_window) {
+        if (mDevice->ops->set_preview_window && buf.get()) {
             mPreviewWindow = buf;
             mHalPreviewWindow.user = this;
             ALOGV("%s &mHalPreviewWindow %p mHalPreviewWindow.user %p", __FUNCTION__,
